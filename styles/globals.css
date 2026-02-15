@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --background: #060606;
+  --foreground: #ededed;
+  --font-sans: var(--font-inter);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: #060606;
+  --color-primary-alt: #0B0B0D;
+  --color-accent-red: #B11226;
+  --color-accent-highlight: #FF2A3D;
+  --color-metal: #9CA3AF;
+
+  --font-sans: var(--font-sans), sans-serif;
+
+  --spacing-128: 32rem;
+  --spacing-144: 36rem;
+
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+}
+
+/* Custom Overrides */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overscroll-behavior-y: none;
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+canvas {
+  touch-action: none;
+}
+
+/* Hide scrollbar for cleaner look if desired, but functionality remains */
+::-webkit-scrollbar {
+  width: 6px;
+  background: #0B0B0D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+/* Utility Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
